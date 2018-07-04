@@ -1,13 +1,11 @@
 import java.util.Scanner;
 
 public class GameEntities extends GameCharacters{
-    /*
-    * Cette Class gère la caractérisation de tout PJ et PNJ du jeu, dans l'univers
-    * Une Entité : Correspond a toutes forme de PJ et PNJ du jeu qui existe "physiquement" dans l'univers
-    *
-    *
-    * Chaque Characters et Entities possèdent leurs propres index d'identification
-    */
+    /**
+     *
+     * Le programme gère chaque entité séparément
+     * Ne pas instancier cette classe
+     */
 
     // ATTRIBUTS
         private int entityIndex; // ID unique de l'entité
@@ -21,16 +19,8 @@ public class GameEntities extends GameCharacters{
     // INSTANTIATION DES CLASSES / CHARACTERS
     private Scanner lire = new Scanner(System.in);
 
-    public GameEntities(int index, int name, boolean isNPC){
-        this.setTE(type);
-        this.setIE(indexEntity);
-        this.setIC(indexCharacter);
-
-
-        if(type == 2){
-            this.setEntityName("Jean-Kévin"); // LOL !
-        }
-
+    public GameEntities(){
+        // vide
     }
 
     public void attack(GameEntities cible){
@@ -101,15 +91,56 @@ public class GameEntities extends GameCharacters{
 
     // *****LISTAGE GET/SET*****
 
+    public int getEntityIndex(){
+        return this.entityIndex;
+    }
+    public void setEntityIndex(int set){
+        this.entityIndex = set;
+    }
+
     public String getEntityName(){
-        return this.entityName = entityName;
+        return this.entityName;
     }
-    public void setEntityName(String entityName){
-        this.entityName = entityName;
+    public void setEntityName(char set){
+        this.entityName = set;
     }
 
+    public String getEntityClassName(){
+        return this.entityClassName;
+    }
+    public void setEntityClassName(char set){
+        this.entityClassName = set;
+    }
 
+    public boolean getNpcStatus(){
+        return this.isNpc;
+    }
+    public void setNpcStatus(boolean set){
+        this.isNpc = set;
+    }
 
+    public int getPV(){
+        return this.PV;
+    }
+    public void setPV(int set){
+        this.PV = set;
+    }
+
+    public int getPA(){
+        return this.PA;
+    }
+    public void setPA(int set){
+        this.PA = set
+    }
+
+    public int getPS(){
+        return this.PS;
+    }
+    public void setPS(int set){
+        this.PS = set
+    }
+
+/*
     public int getIE(){
         return this.indexofEntities = indexofEntities;
     }
@@ -122,7 +153,7 @@ public class GameEntities extends GameCharacters{
     }
     public void setTE(int typeofEntity){
         this.typeofEntity = typeofEntity;
-    }
+    }*/
 
 
 
