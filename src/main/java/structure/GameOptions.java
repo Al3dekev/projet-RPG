@@ -12,19 +12,15 @@ import java.util.Scanner;
 
 public class GameOptions{
 
-    private int NumPlayer;
-    private int indexofPlayers; // named as IP
+    private int playerNumber;
+    private int gameMode; // named as IP
     // C'est ici que les options du jeu se font, et notamment le traitement du taux de joueurs
     // Le(s) joueur(s) par la suite font leurs selections de classe de personnage par ce biais là
     // le traitement de l'info est géré par le GameLauncher et l'info remonte aux autres flux de traitement "Game".
     private Scanner lire = new Scanner(System.in);
-    private List<GameEntities> list = new LinkedList<GameEntities>();
-    public GameEntities[] joueur;
-    public GameEntities GameMonster;
-    public GameGroups GroupeJoueur,GroupeMonstre;
 
-    public GameOptions() {
-        this.setIP(indexofPlayers);
+    public GameOptions(int nombreJoueurs) {
+        this.setIP(nombreJoueurs);
     }
 
 
