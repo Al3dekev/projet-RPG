@@ -132,14 +132,14 @@ public class GameEntities extends GameCharacters{
         return this.PA;
     }
     public void setPA(int set){
-        this.PA = set
+        this.PA = set;
     }
 
     public int getPS(){
         return this.PS;
     }
     public void setPS(int set){
-        this.PS = set
+        this.PS = set;
     }
 
 /*

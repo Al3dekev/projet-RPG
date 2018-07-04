@@ -2,7 +2,7 @@ package entities.NPC;
 
 import java.util.Random;
 
-public class Monstre extends GameCharacters{
+public class Monstre extends GameNPC{
 
     private Random rn = new Random();
 
