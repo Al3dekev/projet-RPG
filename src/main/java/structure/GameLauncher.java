@@ -2,16 +2,10 @@ package structure;
 
 import java.util.Scanner;
 
-public class GameLauncher extends GameOptions {
-
-
-    private boolean returnMenu = false;
-    private GameTurns GT;
-    private Scanner lire = new Scanner(System.in);
+public class GameLauncher {
 
     public GameLauncher(){
-
-
+        // vide
     }
 
 
@@ -39,8 +33,7 @@ public class GameLauncher extends GameOptions {
 
     public void startGame(){
 
-        this.optChooseNumPlayers(); // choix du nombre de joueurs
-        this.optCreatEntities(this.getNumPlayer());
+
 
         //Gestion de tours
         GameTurns ToursManagement = new GameTurns();

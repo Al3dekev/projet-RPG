@@ -1,6 +1,6 @@
 public class main {
     public static void main(String[] args){
-        GameLauncher jeuRPG = new GameLauncher();
+        structure.GameLauncher jeuRPG = new structure.GameLauncher();
         jeuRPG.welcome();
     }
 }
