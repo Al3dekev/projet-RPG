@@ -1,3 +1,5 @@
+package structure;
+
 import java.util.Scanner;
 
 public class GameLauncher extends GameOptions {

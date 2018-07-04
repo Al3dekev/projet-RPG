@@ -1,3 +1,5 @@
+package entities.PC;
+
 public class Guerrier extends GameCharacters { // GUERRIER
 
 

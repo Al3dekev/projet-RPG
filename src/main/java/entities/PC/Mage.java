@@ -1,3 +1,5 @@
+package entities.PC;
+
 public class Mage extends GameCharacters { // MAGE
 
     private int PS; // Point Spécial, concernant l'action spécial de cette classe

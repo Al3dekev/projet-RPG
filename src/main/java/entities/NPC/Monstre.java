@@ -1,3 +1,5 @@
+package entities.NPC;
+
 import java.util.Random;
 
 public class Monstre extends GameCharacters{

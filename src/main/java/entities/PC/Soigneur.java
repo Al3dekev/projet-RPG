@@ -1,3 +1,5 @@
+package entities.PC;
+
 import java.util.Scanner;
 
 public class Soigneur extends GameCharacters { // SOIGNEUR
