@@ -13,14 +13,22 @@ import java.util.Scanner;
 public class GameOptions{
 
     private int playerNumber;
-    private int gameMode; // named as IP
+    private int gameMode;
+    /**
+     * 1: Facile
+     * 2: Normal
+     * 3: Difficile
+     */
+
     // C'est ici que les options du jeu se font, et notamment le traitement du taux de joueurs
     // Le(s) joueur(s) par la suite font leurs selections de classe de personnage par ce biais là
     // le traitement de l'info est géré par le GameLauncher et l'info remonte aux autres flux de traitement "Game".
     private Scanner lire = new Scanner(System.in);
 
-    public GameOptions(int nombreJoueurs) {
-        this.setIP(nombreJoueurs);
+    public GameOptions(int nombreJoueurs, int difficulty) {
+
+        this.setPlayerNumber(nombreJoueurs);
+        this.setGameMode(difficulty);
     }
 
 
@@ -41,6 +49,33 @@ public class GameOptions{
 
         this.setNumPlayer(choosenNum1);
 
+    }
+
+    /**
+     * Choisir classe de chaque PC
+     */
+    public void optPlayers(){
+
+    }
+
+    /**
+     * générer chaque PC et NPC
+     */
+    public void entityGeneration(){
+
+    }
+
+    /**
+     * Récapitule chaque options mises en place par les... options
+     */
+    public void optionSelected(){
+        int choosenNum1;
+        System.out.println("***RECAPITULATIF D'OPTIONS***");
+        if(this.getPlayerNumber() == 1){
+            System.out.println(this.getPlayerNumber()+" a été choisi");
+        }else{
+            System.out.println(this.getPlayerNumber()+" ont été choisi");
+        }
     }
 
     protected void optCreatEntities(int nbreJoueur) {
@@ -82,7 +117,7 @@ public class GameOptions{
 
     }
 
-    public void defineGameGroups(int type){
+/*    public void defineGameGroups(int type){
 
         if(type == 1) {
             GroupeJoueur = new GameGroups(type);
@@ -94,7 +129,7 @@ public class GameOptions{
                 GroupeMonstre.addMember(type,GameMonster);
 
             }
-        }
+        }*/
 
 
 
@@ -122,20 +157,18 @@ public class GameOptions{
 
     // *****LISTAGE GET/SET*****
 
-
-    public int getIP() {
-        return this.indexofPlayers = indexofPlayers;
+    public int getPlayerNumber(){
+        return this.playerNumber;
+    }
+    public void setPlayerNumber(int set){
+        this.playerNumber = set;
     }
 
-    public void setIP(int indexofPlayers){
-        this.indexofPlayers = indexofPlayers;
+    public int getGameMode(){
+        return this.gameMode;
     }
-    public int getNumPlayer(){
-        return this.NumPlayer = NumPlayer;
-    }
-
-    public void setNumPlayer(int Numplayer){
-        this.NumPlayer = Numplayer;
+    public void setGameMode(int set){
+        this.gameMode = set;
     }
 
 

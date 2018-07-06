@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class GameLauncher {
 
+    private boolean backToMenu;
+    private Scanner lire = new Scanner(System.in);
+
     public GameLauncher(){
         // vide
     }
@@ -22,13 +25,13 @@ public class GameLauncher {
             }
             else if(choosenNum1 == 2){
                 this.explications();
-                this.setReturnMenu(true);
+                this.setBackToMenu(true);
             }
 
             else if(choosenNum1 == 3){
                 this.endGame();
             }
-        }while(this.getReturnMenu());
+        }while(this.getBackToMenu());
     }
 
     public void startGame(){
@@ -54,7 +57,7 @@ public class GameLauncher {
             choosenNum3 = lire.nextInt();
         }while(choosenNum3 == 1 || choosenNum3 == 2);
         if(choosenNum3 == 1){
-            System.out.println("Bien, l'avenir t'appartiens a présent !");
+            System.out.println("Bien, l'avenir t'appartient a présent !");
         }else{
             System.out.println("Peu importe, Billy ! Que le jeu commence !");
         }
@@ -72,14 +75,13 @@ public class GameLauncher {
     // *****LISTAGE GET/SET*****
 
 
-    public boolean getReturnMenu(){
-        return this.returnMenu = returnMenu;
+    public boolean getBackToMenu(){
+        return this.backToMenu;
     }
-
-    public void setReturnMenu(boolean returnMenu){
-        this.returnMenu = returnMenu;
+    public void setBackToMenu(boolean set){
+        this.backToMenu = set;
     }
-/*
+    /*
     public GameOptions getOptionsdeJeu() {
         return this.OptionsdeJeu = OptionsdeJeu;
     }*/
