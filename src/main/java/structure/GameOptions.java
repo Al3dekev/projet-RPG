@@ -32,7 +32,56 @@ public class GameOptions{
     }
 
 
-    protected void optChooseNumPlayers(){
+
+
+    /**
+     * Choisir classe de chaque PC
+     */
+    public void optPlayers(){
+
+    }
+
+    /**
+     * générer chaque PC et NPC
+     */
+    public void entityAndStructureGeneration(){
+        //instanciation d'objets et creation de structure pour la gestion des tours
+
+        //Structure: Nom, ID, isNPC
+    }
+
+    /**
+     * Récapitule chaque options mises en place par les... options
+     */
+    public void optionSelected(){
+        int choosenNum1;
+        System.out.println("***RECAPITULATIF D'OPTIONS***");
+        if(this.getPlayerNumber() == 1){
+            System.out.println(this.getPlayerNumber()+" a été choisi");
+        }else{
+            System.out.println(this.getPlayerNumber()+" ont été choisi");
+        }
+    }
+
+
+    // *****LISTAGE GET/SET*****
+
+    public int getPlayerNumber(){
+        return this.playerNumber;
+    }
+    public void setPlayerNumber(int set){
+        this.playerNumber = set;
+    }
+
+    public int getGameMode(){
+        return this.gameMode;
+    }
+    public void setGameMode(int set){
+        this.gameMode = set;
+    }
+
+
+/*    protected void optChooseNumPlayers(){
         int choosenNum1;
         System.out.println("Veuillez choisir le nombre de joueur pour la partie");
         do {
@@ -49,36 +98,11 @@ public class GameOptions{
 
         this.setNumPlayer(choosenNum1);
 
-    }
+    }*/
 
-    /**
-     * Choisir classe de chaque PC
-     */
-    public void optPlayers(){
 
-    }
 
-    /**
-     * générer chaque PC et NPC
-     */
-    public void entityGeneration(){
-
-    }
-
-    /**
-     * Récapitule chaque options mises en place par les... options
-     */
-    public void optionSelected(){
-        int choosenNum1;
-        System.out.println("***RECAPITULATIF D'OPTIONS***");
-        if(this.getPlayerNumber() == 1){
-            System.out.println(this.getPlayerNumber()+" a été choisi");
-        }else{
-            System.out.println(this.getPlayerNumber()+" ont été choisi");
-        }
-    }
-
-    protected void optCreatEntities(int nbreJoueur) {
+/*    protected void optCreatEntities(int nbreJoueur) {
         joueur = new GameEntities[nbreJoueur+1];
         int ChoosenNum2,ChoosenNum3;
         String ChoosenName;
@@ -115,7 +139,7 @@ public class GameOptions{
         this.defineGameGroups(2);
 
 
-    }
+    }*/
 
 /*    public void defineGameGroups(int type){
 
@@ -132,12 +156,7 @@ public class GameOptions{
         }*/
 
 
-
-    public void optCPmessages(){
-
-    }
-
-    public GameEntities getEntity(int type, int index){
+/*    public GameEntities getEntity(int type, int index){
         // Retourne un joueur existant a l'aide de son ID d'entité
         if(type == 1){
             return this.joueur[index] = joueur[index];
@@ -152,24 +171,10 @@ public class GameOptions{
         }else{
             this.GameMonster = GameMonster;
         }
-    }
+    }*/
 
 
-    // *****LISTAGE GET/SET*****
 
-    public int getPlayerNumber(){
-        return this.playerNumber;
-    }
-    public void setPlayerNumber(int set){
-        this.playerNumber = set;
-    }
-
-    public int getGameMode(){
-        return this.gameMode;
-    }
-    public void setGameMode(int set){
-        this.gameMode = set;
-    }
 
 
 
