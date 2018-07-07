@@ -2,7 +2,7 @@ package entities;
 
 import java.util.Scanner;
 
-public class GameEntities extends GameCharacters{
+public class GameEntities{
     /**
      *
      * Le programme gère chaque entité séparément
@@ -17,66 +17,38 @@ public class GameEntities extends GameCharacters{
         private int PV; // Point de vie
         private int PA; // Point d'attaque
         private int PS; // Point spécial
-
-    // INSTANTIATION DES CLASSES / CHARACTERS
-    private Scanner lire = new Scanner(System.in);
+        private Scanner lire = new Scanner(System.in);
 
     public GameEntities(){
         // vide
     }
 
-    public void attack(GameEntities cible){
-        if(this.getIC() == 1){
-            cible.losePV(this.getPA());
-        }else if(this.getIC() == 2){
-            cible.losePV(this.getPA());
-        } else if(this.getIC() == 3){
-            cible.losePV(this.getPA());
-        }
+    /**
+     * Attaque de base
+     * @param cible
+     */
+    public void attack(void cible){
+        // this = attacker
+        cible.losePV(this.getPA());
     }
 
-    public void healSelf(Mage mage1){
-
+    /**
+     * Gain de PV
+     * @param number
+     */
+    public void earnPV(int number){
+        this.setPV(this.getPV + number);
     }
 
-
-
-    public void earnPV(int pvNumber){
-        if(this.getIC() > 0 || this.getIC() < 3){
-            for(int x = 0;x<=this.getIC();x++){
-                if(this.getIC() == 1){
-                    guerrier1.setPV(guerrier1.getPV() + pvNumber);
-                }else if (this.getIC() == 2) {
-                    mage1.setPV(mage1.getPV() + pvNumber);
-                } else if (this.getIC() == 3) {
-                    soigneur1.setPV(mage1.getPV() + pvNumber);
-                }else if(this.getIC() == 101){
-                    monstre1.setPV(monstre1.getPV() + pvNumber);
-                }
-
-
-            }
-        }
+    /**
+     * Perte de PV
+     * @param number
+     */
+    public void losePV(int number){
+        this.setPV(this.getPV - number);
     }
 
-    public void losePV(int paNumber){
-        if(this.getIC() > 0 || this.getIC() < 3){
-            for(int x = 0;x<=this.getIC();x++){
-                if(this.getIC() == 1){
-                    guerrier1.setPV(guerrier1.getPV() - paNumber);
-                }else if (this.getIC() == 2) {
-                    mage1.setPV(mage1.getPV() - paNumber);
-                } else if (this.getIC() == 3) {
-                    soigneur1.setPV(soigneur1.getPV() - paNumber);
-                }else if(this.getIC() == 101){
-                    monstre1.setPV(monstre1.getPV() - paNumber);
-                }
-
-
-            }
-        }
-    }
-
+    // DOIT CE FAIRE AILLEURS
     public void choosePlayerName(){
 
         if(this.getTE() == 1){
