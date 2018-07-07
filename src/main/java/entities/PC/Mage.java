@@ -2,6 +2,10 @@ package entities.PC;
 
 import entities.GamePC;
 
+/**
+ * Mage
+ * Classe JOUABLE
+ */
 public class Mage extends GamePC { // MAGE
 
     public Mage(int entityID, int SpecialAction){

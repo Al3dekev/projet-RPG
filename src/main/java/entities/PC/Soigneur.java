@@ -3,6 +3,10 @@ package entities.PC;
 import entities.GamePC;
 import java.util.Scanner;
 
+/**
+ * Soigneur
+ * Classe JOUABLE
+ */
 public class Soigneur extends GamePC { // SOIGNEUR
 
     private Scanner lire = new Scanner(System.in);
