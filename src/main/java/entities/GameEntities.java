@@ -48,20 +48,6 @@ public class GameEntities{
         this.setPV(this.getPV - number);
     }
 
-    // DOIT CE FAIRE AILLEURS
-    public void choosePlayerName(){
-
-        if(this.getTE() == 1){
-            System.out.println("Veuillez choisir le nom du joueur "+this.getIE());
-        }else{
-            System.out.println("Veuillez choisir le nom du Monstre "+this.getIE());
-        }
-
-
-        String choosenName = lire.nextLine();
-        this.setEntityName(choosenName);
-    }
-
 
     // *****LISTAGE GET/SET*****
 
@@ -113,22 +99,6 @@ public class GameEntities{
     public void setPS(int set){
         this.PS = set;
     }
-
-/*
-    public int getIE(){
-        return this.indexofEntities = indexofEntities;
-    }
-    public void setIE(int indexofEntities){
-        this.indexofEntities = indexofEntities;
-    }
-
-    public int getTE(){
-        return typeofEntity = typeofEntity;
-    }
-    public void setTE(int typeofEntity){
-        this.typeofEntity = typeofEntity;
-    }*/
-
 
 
 
