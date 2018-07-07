@@ -1,21 +1,26 @@
 package entities.PC;
 
-public class Mage extends GameCharacters { // MAGE
+import entities.GamePC;
+
+public class Mage extends GamePC { // MAGE
 
     private int PS; // Point Spécial, concernant l'action spécial de cette classe
 
-    public Mage(int SpecialAction){
-        //this.setIC(2); // Index de(s) mage(s) défini
+    public Mage(int entityID, int SpecialAction){
+
+        this.setEntityClassName("Mage");
+
         this.setPV(100); // PV définis
         this.setPA(20); // PA définis
         this.setPS(SpecialAction);
 
     }
 
-    public int attaque(){
-        return this.getPA(); // retourne les dégats sur la gueule de l'adversaire, YAY
-    }
 
+
+    /**
+     * Action spéciale de classe
+     */
     public void healSelf(){
         this.setPV(this.getPV()+this.getPS());
     }
