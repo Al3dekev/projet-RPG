@@ -44,10 +44,13 @@ public class GameOptions{
     /**
      * générer chaque PC et NPC
      */
-    public void entityAndStructureGeneration(){
+    public void entityAndStructureGeneration(int playerNumber, ){
         //instanciation d'objets et creation de structure pour la gestion des tours
 
         //Structure: Nom, ID, isNPC
+
+
+        // Un:
     }
 
     /**

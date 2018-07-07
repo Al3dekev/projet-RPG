@@ -37,7 +37,7 @@ public class GameEntities{
      * @param number
      */
     public void earnPV(int number){
-        this.setPV(this.getPV + number);
+        this.setPV(this.getPV() + number);
     }
 
     /**
@@ -45,7 +45,7 @@ public class GameEntities{
      * @param number
      */
     public void losePV(int number){
-        this.setPV(this.getPV - number);
+        this.setPV(this.getPV() - number);
     }
 
 
