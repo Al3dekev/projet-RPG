@@ -11,8 +11,8 @@ public class GameEntities extends GameCharacters{
 
     // ATTRIBUTS
         private int entityIndex; // ID unique de l'entité
-        private char entityName; // Non de l'entité
-        private char entityClassName; // Nom de la classe de l'entité (ex: monstre, guerrier, ...)
+        private String entityName; // Non de l'entité
+        private String entityClassName; // Nom de la classe de l'entité (ex: monstre, guerrier, ...)
         private boolean isNpc; // NPC ou PC?
         private int PV; // Point de vie
         private int PA; // Point d'attaque
@@ -103,14 +103,14 @@ public class GameEntities extends GameCharacters{
     public String getEntityName(){
         return this.entityName;
     }
-    public void setEntityName(char set){
+    public void setEntityName(String set){
         this.entityName = set;
     }
 
     public String getEntityClassName(){
         return this.entityClassName;
     }
-    public void setEntityClassName(char set){
+    public void setEntityClassName(String set){
         this.entityClassName = set;
     }
 

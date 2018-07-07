@@ -4,10 +4,10 @@ public class Mage extends GameCharacters { // MAGE
 
     private int PS; // Point Spécial, concernant l'action spécial de cette classe
 
-    public Mage(int PV, int PA, int SpecialAction){
-        this.setIC(2); // Index de(s) mage(s) défini
-        this.setPV(PV); // PV définis
-        this.setPA(PA); // PA définis
+    public Mage(int SpecialAction){
+        //this.setIC(2); // Index de(s) mage(s) défini
+        this.setPV(100); // PV définis
+        this.setPA(20); // PA définis
         this.setPS(SpecialAction);
 
     }
@@ -30,17 +30,7 @@ public class Mage extends GameCharacters { // MAGE
 
     // *****LISTAGE GET/SET*****
 
-    public void getClassName(){
-        System.out.printf("Mage");
-    }
 
 
-    public int getPS(){
-        return this.PS = PS;
-    }
-
-    public void setPS(int PS){
-        this.PS = PS;
-    }
 
 }
