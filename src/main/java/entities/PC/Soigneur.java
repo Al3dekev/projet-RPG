@@ -1,34 +1,30 @@
 package entities.PC;
 
+import entities.GamePC;
 import java.util.Scanner;
 
-public class Soigneur extends GameCharacters { // SOIGNEUR
+public class Soigneur extends GamePC { // SOIGNEUR
 
-    private int PS; // Point Spécial, concernant l'action spécial de cette classe
     private Scanner lire = new Scanner(System.in);
 
-    public Soigneur(int PV, int PA, int SpecialAction){
-        this.setIC(3); // Index de(s) soigneur(s) défini
-        this.setPV(PV); // PV définis
-        this.setPA(PA); // PA définis
+    public Soigneur(int entityID, int SpecialAction){
+
+        this.setEntityClassName("Soigneur"); // Nom de la classe
+        this.setEntityIndex(entityID);// ID
+
+        this.setPV(50); // PV définis
+        this.setPA(5); // PA définis
         this.setPS(SpecialAction); // PS définis
 
     }
 
-
-    // *****LISTAGE GET/SET*****
-
-    public String getClassName(){
-        return super.getCharacterName();
+    /**
+     * Action spéciale de classe 1
+     */
+    public void healOthers(){
+        //a remplir
     }
 
 
-    public int getPS(){
-        return this.PS = PS;
-    }
-
-    public void setPS(int PS){
-        this.PS = PS;
-    }
 
 }
