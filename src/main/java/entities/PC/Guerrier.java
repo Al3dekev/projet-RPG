@@ -1,20 +1,27 @@
 package entities.PC;
 
-public class Guerrier extends GameCharacters { // GUERRIER
+import entities.GamePC;
+
+/**
+ * Guerrier
+ * Classe JOUABLE
+ */
+public class Guerrier extends GamePC { // GUERRIER
 
 
+    public Guerrier(int entityID){
 
-    public Guerrier(int PV, int PA){
-        this.setIC(1); // Index de(s) Guerrier(s) défini
-        this.setPV(PV); // PV définis
-        this.setPA(PA); // PA définis
+        // Infos Générales
+        this.setEntityClassName("Guerrier");
+        this.setEntityIndex(entityID);
+
+        // Infos Techniques
+        this.setPV(200); // PV définis
+        this.setPA(10); // PA définis
 
     }
 
-
-    public String getClassName(){
-        return super.getCharacterName();
-
-    }
+    //Pas d'attaque spéciale de la classe
+    //pas de PS pour cette classe
 
 }
