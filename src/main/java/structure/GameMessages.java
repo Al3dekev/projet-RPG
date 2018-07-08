@@ -59,6 +59,7 @@ public class GameMessages {
 
     public void optionNumPlayer(){
         System.out.println("Veuillez choisir le nombre de joueurs pour la partie");
+        System.out.println("Nombre de joueurs max: "+10);
     }
 
     public void optionDifficulty(){
