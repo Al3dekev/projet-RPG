@@ -6,6 +6,7 @@ public class GameLauncher {
 
     private boolean backToMenu;
     private Scanner lire = new Scanner(System.in);
+    private GameMessages message = new GameMessages();
 
     public GameLauncher(){
         // vide
@@ -13,27 +14,30 @@ public class GameLauncher {
 
 
     public void welcome(){
-        System.out.println("Bienvenue dans le RPG !\n");
+        int choosenNum1;
+        message.welcomeGameMessage();
         do{
-            System.out.println("1: Commencer le Jeu");
-            System.out.println("2: Explications");
-            System.out.println("3: Quitter le Jeu");
-            int choosenNum1 = lire.nextInt();
+            message.mainMenuMessage();
+            choosenNum1 = lire.nextInt();
 
             if(choosenNum1 == 1){
                 this.startGame();
             }
             else if(choosenNum1 == 2){
-                this.explications();
-                this.setBackToMenu(true);
+                message.mainMenuExplanations();
+                choosenNum1 = 10;
             }
 
             else if(choosenNum1 == 3){
                 this.endGame();
             }
-        }while(this.getBackToMenu());
+        }while(choosenNum1 < 0 || choosenNum1 > 3);
     }
 
+
+    /**
+     * Génération du jeu en fonction des options
+     */
     public void startGame(){
 
 
@@ -45,23 +49,22 @@ public class GameLauncher {
 
     }
 
-    public void explications(){
-        System.out.println("Comme vous l'aurez compris, c'est un RPG, rien de plus classique");
-        System.out.println("Apres avoir choisi le nombre de joueur, vous serez confronté a un Monstre que vous devrez vaincre.");
-        System.out.println("C'est en utilisant les numéros de votre clavier que vous naviguerez dans les différentes options du jeu, comme vous venez de le faire pour acceder a ce menu");
-        System.out.println("Compris?\n");
-        int choosenNum3;
-        System.out.println("1: Oui");
-        System.out.println("2: Non");
-        do{
-            choosenNum3 = lire.nextInt();
-        }while(choosenNum3 == 1 || choosenNum3 == 2);
-        if(choosenNum3 == 1){
-            System.out.println("Bien, l'avenir t'appartient a présent !");
-        }else{
-            System.out.println("Peu importe, Billy ! Que le jeu commence !");
-        }
+    public void options(){
+        int num;
+        int diff;
 
+        message.optionNumPlayer();
+        do{
+            num = lire.nextInt();
+        }while(num > 0 || num < 10);
+
+        message.optionDifficulty();
+        do{
+            diff = lire.nextInt();
+        }while(diff > 0 || diff < 4);
+
+
+        // générer ensuite GameOptions ici avec les arguments
     }
 
 
