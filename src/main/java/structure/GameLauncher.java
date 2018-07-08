@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class GameLauncher {
 
-    private boolean backToMenu;
+    //private boolean backToMenu;
     private Scanner lire = new Scanner(System.in);
     private GameMessages message = new GameMessages();
 
@@ -20,15 +20,16 @@ public class GameLauncher {
             message.mainMenuMessage();
             choosenNum1 = lire.nextInt();
 
-            if(choosenNum1 == 1){
+            if(choosenNum1 == 1){ // Démarrage du jeu & options
+                this.options();
                 this.startGame();
             }
-            else if(choosenNum1 == 2){
+            else if(choosenNum1 == 2){ // Explications
                 message.mainMenuExplanations();
                 choosenNum1 = 10;
             }
 
-            else if(choosenNum1 == 3){
+            else if(choosenNum1 == 3){ // Quitter le jeu
                 this.endGame();
             }
         }while(choosenNum1 < 0 || choosenNum1 > 3);
@@ -40,13 +41,7 @@ public class GameLauncher {
      */
     public void startGame(){
 
-
-
-        //Gestion de tours
-        GameTurns ToursManagement = new GameTurns();
-        ToursManagement.Turn();
-        //ToursManagement
-
+        // Lancer le jeu avec la gestion de tour, etc
     }
 
     public void options(){
@@ -63,8 +58,8 @@ public class GameLauncher {
             diff = lire.nextInt();
         }while(diff > 0 || diff < 4);
 
+        private GameOptions optionsgenerated = new GameOptions(num,diff);
 
-        // générer ensuite GameOptions ici avec les arguments
     }
 
 
@@ -77,6 +72,7 @@ public class GameLauncher {
 
     // *****LISTAGE GET/SET*****
 
+/*
 
     public boolean getBackToMenu(){
         return this.backToMenu;
@@ -84,6 +80,7 @@ public class GameLauncher {
     public void setBackToMenu(boolean set){
         this.backToMenu = set;
     }
+*/
     /*
     public GameOptions getOptionsdeJeu() {
         return this.OptionsdeJeu = OptionsdeJeu;

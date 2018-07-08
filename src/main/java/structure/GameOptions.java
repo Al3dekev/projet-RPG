@@ -1,5 +1,10 @@
 package structure;
 
+import entities.NPC.Monstre;
+import entities.PC.Guerrier;
+import entities.PC.Mage;
+import entities.PC.Soigneur;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -45,15 +50,53 @@ public class GameOptions{
      * générer chaque PC et NPC
      */
     public void entityGeneration(){
+        int x;
+        String playerName;
+        String[] classes = {"Guerrier","Mage","Soigneur"};
+        int classeSelected;
+        Object[] tabPlayers = new Object[this.getPlayerNumber()];
+
+        // faire une structuration 1=soigneur, etc
         //instanciation d'objets et creation de structure pour la gestion des tours
 
         //Structure: Nom, ID, isNPC
-        for(var x = 0;x<=this.getPlayerNumber();x++){
-            // impossible de faire une boucle sur des classes de différents nom
-            // a gérer plus tard
-        }
+        for(x = 1;x<=this.getPlayerNumber();x++){
+            System.out.println("Veuillez choisir le nom du joueur"+x);
+            /*do{*/
+                playerName = lire.nextLine();
+            /*}while()*/
 
-        // Un:
+                // nom choisi affiché
+                System.out.println("Nom joueur"+x+": "+playerName+"\n");
+
+            System.out.println("Veuillez choisir la classe de "+playerName);
+
+            for(int y = 0;y <= classes.length;y++){
+                System.out.println((y+1)+": "+classes[y]);
+            }
+            do{
+                classeSelected = lire.nextInt();
+            }while(classeSelected == 1 || classeSelected == 2 || classeSelected == 3);
+
+            // en fonction de la selection, génération du joueur
+            try {
+                if (classeSelected == 1) {
+                    tabPlayers[x] = new Guerrier(x, playerName);
+                } else if (classeSelected == 2) {
+                    tabPlayers[x] = new Mage(x, playerName);
+                } else if (classeSelected == 3) {
+                    tabPlayers[x] = new Soigneur(x, playerName);
+                }
+            }catch(Exception e){
+                System.out.println("Erreur de selection de classe lors de la création du jeu");
+            }
+
+
+        } // fin boucle for génération joueurs
+
+
+        // faire la génération du monstre a la fin
+        Monstre monstre = new Monstre();
     }
 
     /**
