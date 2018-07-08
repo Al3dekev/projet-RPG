@@ -165,13 +165,6 @@ do{
 
 
     // *****LISTAGE GET/SET*****
-    public int getNbTurns(){
-        return this.NbTurns = NbTurns;
-    }
-
-    public void setNbTurns(int Nbturns){
-        this.NbTurns = Nbturns;
-    }
 
     public int getISA(){
         return this.indexofSelectedAction = indexofSelectedAction;
