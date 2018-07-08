@@ -9,11 +9,12 @@ import entities.GamePC;
 public class Guerrier extends GamePC { // GUERRIER
 
 
-    public Guerrier(int entityID){
+    public Guerrier(int entityID, String entityName){
 
         // Infos Générales
         this.setEntityClassName("Guerrier");
         this.setEntityIndex(entityID);
+        this.setEntityName(entityName);
 
         // Infos Techniques
         this.setPV(200); // PV définis

@@ -11,10 +11,11 @@ public class Soigneur extends GamePC { // SOIGNEUR
 
     private Scanner lire = new Scanner(System.in);
 
-    public Soigneur(int entityID){
+    public Soigneur(int entityID, String entityName){
 
         this.setEntityClassName("Soigneur"); // Nom de la classe
         this.setEntityIndex(entityID);// ID
+        this.setEntityName(entityName);
 
         this.setPV(50); // PV définis
         this.setPA(5); // PA définis

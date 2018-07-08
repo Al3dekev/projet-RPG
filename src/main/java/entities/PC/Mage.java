@@ -8,10 +8,11 @@ import entities.GamePC;
  */
 public class Mage extends GamePC { // MAGE
 
-    public Mage(int entityID){
+    public Mage(int entityID, String entityName){
 
         this.setEntityClassName("Mage"); // Nom de classe
         this.setEntityIndex(entityID); // ID
+        this.setEntityName(entityName);
 
         this.setPV(100); // PV définis
         this.setPA(20); // PA définis
