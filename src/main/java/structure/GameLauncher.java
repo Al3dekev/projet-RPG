@@ -42,6 +42,10 @@ public class GameLauncher {
     public void startGame(){
 
         // Lancer le jeu avec la gestion de tour, etc
+        GameMotor moteurDeGestion  = new GameMotor();
+        for(){
+
+        }
     }
 
     public void options(){

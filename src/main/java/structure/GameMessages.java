@@ -2,27 +2,55 @@ package structure;
 
 public class GameMessages {
 
+
+    // Echelle type de gestion d'une methode pour cette classe:
+    // Arg1:
+    // Arg2:
+    // Arg3:
+    
     public GameMessages(){
 
     }
 
     /***
      * Gère le message de base visualisé a chaque tour
+     * Doit afficher le numéro de tour, quel est l'entité qui joue, ses points de vie et les PV du monstre restant
      */
-    public void eachTurnMessages(){
-
+    public void eachTurnMessages(int turnNumber, int TurnGuyNumero, Object entity){
+        System.out.println("Tour numéro: "+turnNumber);
+        if(entity.isNpc == true){
+            System.out.printf("C'est au tour de "+entity.getEntityName()+" de jouer !\n");
+            for(int i = 1;i<=this.getNumPlayer();i++){
+                System.out.printf(joueur[i].getEntityName()+": "+joueur[i].getPV()+" PV restant\n");
+            }
+            System.out.printf("Monstre: "+Monstre.getPV()+" PV restant\n");
+        }else{
+            System.out.printf("C'est au tour du Monstre de jouer !\n");
+        }
     }
 
-    public void actionAndTargetMessage(){
-
+    public void actionAndTargetMessage(Object attaquant, Object target){
+        System.out.println("");
     }
 
     public void victoryMessage(){
-
+        if (type == 1) {
+            if(this.getNumPlayer() > 1){
+                System.out.println("Félicitations aux joueurs pour avoir l'emporté la partie !");
+            }else{
+                System.out.println("Félicitations a toi,"+joueur[1].getEntityName()+", tu as vaincu le Monstre !");
+            }
+        }else{
+            if(this.getNumPlayer() > 1){
+                System.out.println("Le Monstre vous a vaincu, mais la redemption vous appartiens lors d'une nouvelle partie !");
+            }else{
+                System.out.println("le Monstre t'a vaincu, "+joueur[1].getEntityName()+", dommage !!");
+            }
+        }
     }
 
     public void monsterSuperHitMessage(){
-
+        System.out.println("Incroyable ! Le monstre a fait une super attaque !");
     }
 
     public void numberTurnMessage(){

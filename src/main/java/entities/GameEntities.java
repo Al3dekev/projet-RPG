@@ -27,7 +27,7 @@ public class GameEntities{
      * Attaque de base
      * @param cible
      */
-    public void attack(cible){
+    public void attack(Object cible){
         // this = attacker
         cible.losePV(this.getPA());
     }
